@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{50741FF5-8F0B-4C94-B661-A1E673B6D136}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PlotFDEM</RootNamespace>
+    <AssemblyName>PlotFDEM</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>CE516500923AED94C9C53135285FFA8BC91BF485</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>PlotFDEM_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="myMath, Version=1.0.5255.27505, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\JointElementDesigner\JointElementEx\JointElement\myMath\myMath\bin\Debug\myMath.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="ZedGraph, Version=5.1.7.430, Culture=neutral, PublicKeyToken=02a83cbd123fcd60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZedGraph.5.1.7\lib\net35-Client\ZedGraph.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConnectionPlot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreatePlot.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MatrixContinuum\ContourPlot\ColorSchemeMakerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MatrixContinuum\ContourPlot\ColorSchemeMakerForm.Designer.cs">
+      <DependentUpon>ColorSchemeMakerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MatrixContinuum\ContourPlot\ContourPlotForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MatrixContinuum\ContourPlot\ContourPlotForm.Designer.cs">
+      <DependentUpon>ContourPlotForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MatrixContinuum\ContourPlot\ContourPlotMaker.cs" />
+    <Compile Include="MatrixContinuum\ContourPlot\GridSquare.cs" />
+    <Compile Include="MatrixContinuum\ContourPlot\GridTriangle.cs" />
+    <Compile Include="MatrixContinuum\MatrixContinuumElasticFiberDamageModel.cs" />
+    <Compile Include="MatrixContinuum\MatrixContinuumElasticFiberModel.cs" />
+    <Compile Include="MatrixContinuum\MatrixContinuumRigidFiberModel.cs" />
+    <Compile Include="MatrixContinuum\MatrixContinuum.cs" />
+    <Compile Include="PackPlot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PackPlot.Designer.cs">
+      <DependentUpon>PackPlot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReadCSV.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MatrixContinuum\ContourPlot\ColorSchemeMakerForm.resx">
+      <DependentUpon>ColorSchemeMakerForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MatrixContinuum\ContourPlot\ContourPlotForm.resx">
+      <DependentUpon>ContourPlotForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PackPlot.resx">
+      <DependentUpon>PackPlot.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\..\Other\C#Projects\SinglePlot\SinglePlot.csproj">
+      <Project>{c77086d3-d29f-442d-b5eb-42c16cdf5703}</Project>
+      <Name>SinglePlot</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\animation\animation\Animation.csproj">
+      <Project>{6bf04a54-6af9-4eb2-9d73-e0fc1bc01378}</Project>
+      <Name>Animation</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="PlotFDEM_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="License-LGPL.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
